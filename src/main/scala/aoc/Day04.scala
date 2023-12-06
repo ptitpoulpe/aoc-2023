@@ -23,7 +23,6 @@ def part2(input: String): Int = {
   val res = HashMap[Int, Int](cards.map((i, _, _) => (i, 1)): _*)
 
   cards.foreach((i, win, numbers) => {
-    println(i)
     Range(i + 1, i + (win & numbers).size + 1, 1)
       .foreach(j => res.put(j, res(j) + res(i)))
   })
